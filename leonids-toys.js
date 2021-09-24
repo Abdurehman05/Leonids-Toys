@@ -13,3 +13,6 @@ const toys = [
   }
 ];
 console.log(toys);
+for (const toy of toys) {
+  console.log(`Price of toy ${toy.name} is $${toy.price}`);
+}
