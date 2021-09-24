@@ -34,5 +34,6 @@ toys.push(shimer);
 
 console.log(toys);
 for (const toy of toys) {
+  toy.price = toy.price + toy.price * 0.05;
   console.log(`Price of toy ${toy.name} is $${toy.price}`);
 }
