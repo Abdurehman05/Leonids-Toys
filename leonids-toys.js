@@ -32,8 +32,11 @@ const shimer = {
 toys.push(paw_patrol);
 toys.push(shimer);
 
-console.log(toys);
+const toyToFind = 4;
 for (const toy of toys) {
-  toy.price = toy.price + toy.price * 0.05;
-  console.log(`Price of toy ${toy.name} is $${toy.price}`);
+  if (toy.id === toyToFind) {
+    // Price increase by 5 percent
+    toy.price = toy.price + toy.price * 0.05;
+    console.log(`Price of toy ${toy.name} is $${toy.price}`);
+  }
 }
