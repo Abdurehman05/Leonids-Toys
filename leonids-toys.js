@@ -32,11 +32,41 @@ const shimer = {
 toys.push(paw_patrol);
 toys.push(shimer);
 
-const toyToFind = 4;
+const addToyToInventory = toyObject => {
+  //Get index of the last item in the array
+  const lastIndex = toys.length - 1;
+  //Get the last object in the array
+  const currentLastToy = toys[lastIndex];
+  //Get id property value for the last toy
+  const maxId = currentLastToy.id;
+  //increase the current max id by 1
+  const idForNewToy = maxId + 1;
+  //add the id property to the toy object
+  toyObject.id = idForNewToy;
+  //Add the toy object to the array
+  toys.push(toyObject);
+};
+
+const fatBrain = {
+  name: "Fat Brain",
+  price: 27
+};
+
+addToyToInventory(fatBrain);
+
+//const toyToFind = 4;
+// for (const toy of toys) {
+//   if (toy.id === toyToFind) {
+//     // Price increase by 5 percent
+//     toy.price = toy.price + toy.price * 0.05;
+//     console.log(`Price of toy ${toy.name} is $${toy.price}`);
+//   }
+// }
+
 for (const toy of toys) {
-  if (toy.id === toyToFind) {
-    // Price increase by 5 percent
-    toy.price = toy.price + toy.price * 0.05;
-    console.log(`Price of toy ${toy.name} is $${toy.price}`);
-  }
+  // Price increase by 5 percent
+  toy.price = toy.price + toy.price * 0.05;
+  console.log(`Price of toy ${toy.name} is $${toy.price}`);
 }
+
+console.log(toys);
